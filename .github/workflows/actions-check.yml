@@ -1,0 +1,13 @@
+name: Actions queue check
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/actions-check.yml"
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Confirm runner availability
+        run: echo "GitHub Actions runner is working"
